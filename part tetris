@@ -1,0 +1,25 @@
+class GameOver(Exception):
+    """Exception used for its control flow properties"""
+
+def get_sound(filename):
+    return pygame.mixer.Sound(os.path.join(os.path.dirname(__file__), "resources", filename))
+
+BGCOLOR = (15, 15, 20)
+BORDERCOLOR = (140, 140, 140)
+
+BLOCKSIZE = 30
+BORDERWIDTH = 10
+
+MATRIS_OFFSET = 20
+
+MATRIX_WIDTH = 10
+MATRIX_HEIGHT = 22
+
+LEFT_MARGIN = 340
+
+WIDTH = MATRIX_WIDTH*BLOCKSIZE + BORDERWIDTH*2 + MATRIS_OFFSET*2 + LEFT_MARGIN
+HEIGHT = (MATRIX_HEIGHT-2)*BLOCKSIZE + BORDERWIDTH*2 + MATRIS_OFFSET*2
+
+TRICKY_CENTERX = WIDTH-(WIDTH-(MATRIS_OFFSET+BLOCKSIZE*MATRIX_WIDTH+BORDERWIDTH*2))/2
+
+VISIBLE_MATRIX_HEIGHT = MATRIX_HEIGHT - 2
